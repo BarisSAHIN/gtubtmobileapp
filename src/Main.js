@@ -22,3 +22,10 @@ var styles ={
     height: null
   },
 };
+
+
+var new_style = {
+  background: {
+    color: red
+  }
+}
