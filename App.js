@@ -1,44 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { StackNavigator , DrawerNavigator} from 'react-navigation';
+import RegisterScreen from './src/Register';
+import HomeScreen from './src/Home'
+import Dashboard from './src/Dashboard'
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
 
-export default class App extends Component {
+const SimpleApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  RegisterPage: {screen: RegisterScreen},
+  DashboardPage: {screen: Dashboard}
+});
+
+export default class App extends React.Component {
   render() {
-    return (
-      <View>
-        <Text>
-          BT Mobile App
-        </Text>
-      </View>
-    );
+    return <SimpleApp />;
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    justifyContent: 'center'
+  }
 });
